@@ -60,6 +60,14 @@ public class CityDaoImpl implements CityDao {
                     return pst1;
                 });
                 return "City added";
+            case ("update_city"):
+                String udateCity = "UPDATE cities set id=valueNew, name=newName, countryCode=newCode, " +
+                        "district=newDistrict, population=newPopulation";
+                        jdbcTemplate.update(connection -> {
+                            PreparedStatement pst1 = connection.prepareStatement(udateCity);
+                            return pst1;
+                        });
+                return "City updated";
             case ("delete_city"):
                 String deleteCity = "DELETE FROM cities where queryString=?";
                 jdbcTemplate.update(connection -> {

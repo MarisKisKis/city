@@ -27,6 +27,11 @@ public class CityController {
         cityDaoImpl.query(queryString);
     }
 
+    @PutMapping
+    public void updateCity(@RequestBody String queryString) {
+        cityDaoImpl.query(queryString);
+    }
+
     @DeleteMapping
     public void deleteCity(@RequestBody String queryString) {
         cityDaoImpl.query(queryString);
